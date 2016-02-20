@@ -107,6 +107,10 @@ if (Package['useraccounts:iron-routing']) {
     var origEnsureSignedIn = AccountsTemplates.ensureSignedIn;
     AccountsTemplates.ensureSignedIn =
       AccountsPatchUi.wrapWithSignedUp(origEnsureSignedIn);
+
+    var origButtonText = AccountsTemplates.atSocialHelpers.buttonText;
+    AccountsTemplates.atSocialHelpers.buttonText =
+      AccountsPatchUi.wrapWithSignedUp(origButtonText);
   }
 }
 
